@@ -1,0 +1,69 @@
+Initializing adapt mgr...done
+current position: 0;0
+executing tactic DecAlt2
+current position: 1;0
+executing tactic DecAlt2
+current position: 2;0
+executing tactic DecAlt2
+current position: 3;0
+executing tactic DecAlt2
+current position: 4;0
+executing tactic DecAlt2
+current position: 5;0
+executing tactic DecAlt2
+current position: 6;0
+executing tactic DecAlt
+current position: 7;0
+executing tactic DecAlt2
+current position: 8;0
+executing tactic DecAlt2
+current position: 9;0
+executing tactic EcmOff
+current position: 10;0
+executing tactic DecAlt2
+current position: 11;0
+executing tactic GoLoose
+Target detected at 11;0
+current position: 12;0
+executing tactic GoLoose
+current position: 13;0
+executing tactic IncAlt2
+Target detected at 13;0
+current position: 14;0
+executing tactic EcmOff
+current position: 15;0
+executing tactic DecAlt2
+Target detected at 15;0
+current position: 16;0
+executing tactic EcmOff
+current position: 17;0
+executing tactic IncAlt2
+Target detected at 17;0
+current position: 18;0
+executing tactic DecAlt2
+current position: 19;0
+executing tactic IncAlt2
+Target detected at 19;0
+current position: 20;0
+executing tactic IncAlt2
+current position: 21;0
+executing tactic EcmOff
+current position: 22;0
+executing tactic DecAlt2
+current position: 23;0
+executing tactic EcmOff
+current position: 24;0
+executing tactic GoLoose
+Target detected at 24;0
+current position: 25;0
+executing tactic IncAlt
+current position: 26;0
+executing tactic DecAlt2
+current position: 27;0
+executing tactic IncAlt
+current position: 28;0
+executing tactic DecAlt
+current position: 29;0
+executing tactic DecAlt2
+current position: 30;0
+executing tactic EcmOff
