@@ -1,0 +1,11 @@
+file,targets,destoryed,wheredestroyed,missionsuccess,decisionTimeAvg,decisionTimeVar,seed,scenario
+csv,4,0,39,0,39985.3,1.74444e+09,19,env1k
+csv,4,0,39,0,46278.4,2.41913e+09,25,env1k
+csv,6,0,39,0,40020,1.77071e+09,22,env1k
+csv,3,0,39,0,37904,1.52956e+09,21,env1k
+csv,10,0,39,1,47213.7,3.04468e+09,17,env1k
+csv,6,0,39,0,46494,2.30262e+09,18,env1k
+csv,9,0,39,0,58327,3.66009e+09,16,env1k
+csv,5,0,39,0,42513.4,1.93376e+09,23,env1k
+csv,10,0,39,1,40631.8,1.79602e+09,20,env1k
+csv,10,0,39,1,45991.5,2.35102e+09,24,env1k
