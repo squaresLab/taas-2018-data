@@ -1,0 +1,113 @@
+Initializing adapt mgr...done
+current position: 0;0
+executing tactic DecAlt2
+current position: 1;0
+executing tactic DecAlt2
+current position: 2;0
+executing tactic DecAlt2
+current position: 3;0
+executing tactic DecAlt2
+current position: 4;0
+executing tactic DecAlt
+current position: 5;0
+executing tactic DecAlt2
+current position: 6;0
+executing tactic DecAlt2
+current position: 7;0
+executing tactic DecAlt2
+current position: 8;0
+executing tactic DecAlt2
+current position: 9;0
+executing tactic DecAlt2
+current position: 10;0
+executing tactic GoLoose
+Target detected at 10;0
+current position: 11;0
+executing tactic EcmOff
+Target detected at 11;0
+current position: 12;0
+executing tactic IncAlt2
+current position: 13;0
+executing tactic GoLoose
+current position: 14;0
+executing tactic GoLoose
+current position: 15;0
+executing tactic GoLoose
+current position: 16;0
+executing tactic IncAlt2
+current position: 17;0
+executing tactic DecAlt2
+current position: 18;0
+executing tactic GoTight
+current position: 19;0
+executing tactic GoLoose
+current position: 20;0
+executing tactic GoLoose
+current position: 21;0
+executing tactic GoLoose
+current position: 22;0
+executing tactic DecAlt2
+current position: 23;0
+executing tactic IncAlt2
+current position: 24;0
+executing tactic GoLoose
+current position: 25;0
+executing tactic GoLoose
+current position: 26;0
+executing tactic EcmOff
+current position: 27;0
+executing tactic DecAlt2
+current position: 28;0
+executing tactic EcmOff
+current position: 29;0
+executing tactic IncAlt2
+Target detected at 29;0
+current position: 30;0
+executing tactic IncAlt
+Target detected at 30;0
+current position: 31;0
+executing tactic DecAlt2
+current position: 32;0
+executing tactic EcmOff
+current position: 33;0
+executing tactic IncAlt
+current position: 34;0
+executing tactic GoLoose
+current position: 35;0
+executing tactic EcmOff
+current position: 36;0
+executing tactic DecAlt2
+current position: 37;0
+executing tactic GoLoose
+Target detected at 37;0
+current position: 38;0
+executing tactic GoTight
+current position: 39;0
+executing tactic IncAlt2
+Total targets detected: 5
+#                                       
+                                        
+ #                                      
+                                        
+  #                                     
+                                        
+   #                                    
+                                        
+    #                                   
+     #                                  
+                                        
+      #                                 
+                                        
+       #                                
+                                        
+        #        #                      
+                               #        
+         #   #### *#### ####  #   ###   
+                                ##      
+          ###          #    ##       #**
+       ^      ^ ^  ^ ^  ^  ^  ^   ^ ^   
+T TTTTT TTXX  T      TT  TT  XX T   TX  
+out:destroyed=0
+out:targetsDetected=5
+out:missionSuccess=0
+csv,5,0,39,0,291351,9.00147e+10
