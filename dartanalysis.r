@@ -1,6 +1,46 @@
 library(readr)
 library(ggplot2)
+library("plyr", lib.loc="~/R/x86_64-pc-linux-gnu-library/3.4")
+library("dplyr", lib.loc="~/R/x86_64-pc-linux-gnu-library/3.4")
 
+#MISSING DATA
+# nodec2 seed 24
+# scratch seed 24
+
+# start paper graphs
+# start ga graphs
+ga <- read_csv("~/research/taas-2018-data/processed/ga.csv")
+#ga$generation <- as.factor(ga$generation)
+sub <- subset(ga,ga$seed==18 & (ga$popsize==1000 | ga$scenario=='scratch'))
+sub <- subset(ga,(ga$popsize==1000 | ga$scenario=='scratch'))
+
+drops <- c("scenario","plan","generation","init")
+dataagg <- ga[,!(names(ga) %in% drops)]
+dataagg1 <- aggregate(dataagg,by=list(ga$generation,ga$scenario),FUN=mean,na.rm=TRUE)
+
+# sum up the runtime
+datasum <- ddply(dataagg1,.(Group.2),transform,sumTime = round(cumsum(runtime)/60))
+# generation graph
+p <- ggplot(data=datasum, aes(x=Group.1,y=profit,color=Group.2))
+p + geom_line() #+ facet_wrap(~ timestep)
+# runtime graph
+p <- ggplot(data=datasum, aes(x=sumTime,y=profit,color=Group.2))
+p + geom_line() #+ facet_wrap(~ timestep)
+
+#try to fill in missing data
+dat2 <- datasum %>%
+  complete(sumTime = full_seq(sumTime, period=1)) %>%
+  fill(-sumTime)
+
+# start pladapt graphs (overall run)
+pladapt <- read_csv("~/research/taas-2018-data/processed/pladapt/pladapt.csv")
+p <- ggplot(data=pladapt, aes(x=scenario,y=(targets+destoryed)))
+p + geom_boxplot()
+
+p <- ggplot(data=pladapt, aes(x=scenario,y=decisionTimeAvg/1000/60))
+p + geom_boxplot()
+
+# start prelim graphs
 dat <- read_csv("/home/ckinneer/research/analysis-code/data.csv")
 dat <- dartsweepnocrossover
 
