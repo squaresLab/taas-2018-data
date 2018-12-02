@@ -14,6 +14,10 @@ cbPalette <- c("#47242B","#5A607C", "#3EAA9A", "#C3E270", "#A18E7B")
 # start ga graphs
 # 7.49 4.77
 ga <- read_csv("~/research/taas-2018-data/processed/ga.csv")
+
+ga$scenario <- factor(ga$scenario, levels = c("env","nosurv","nodec2","scratch"))
+ga$scenario <- revalue(ga$scenario, c("env"="Environment Only", "nodec2"="Slow Descend", "nosurv"="No Survivability", "scratch"="Scratch"))
+
 #ga$generation <- as.factor(ga$generation)
 sub <- subset(ga,ga$seed==18 & (ga$popsize==1000 | ga$scenario=='scratch'))
 sub <- subset(ga,(ga$popsize==1000 | ga$scenario=='scratch'))
@@ -45,6 +49,11 @@ dat2 <- datasum %>%
 
 # start pladapt graphs (overall run)
 pladapt <- read_csv("~/research/taas-2018-data/processed/pladapt/pladapt.csv")
+
+pladapt$scenario <- factor(pladapt$scenario, levels = c("env","nosurv","nodec2","scratch","pmc"))
+pladapt$scenario <- revalue(pladapt$scenario, c("env"="Environment\nOnly", "nodec2"="Slow\nDescend", "nosurv"="No\nSurvivability", "scratch"="Scratch", "pmc"="PRISM"))
+
+
 p <- ggplot(data=pladapt, aes(x=scenario,y=(targets+destoryed)))
 p <- p + ylab("Utility") + xlab("Starting Plan") + theme_bw()
 p <- p + theme(text=element_text(size=21), title=element_text(size=21,face="bold"),legend.title=element_text(size=21,face="bold"),legend.text=element_text(size=20),legend.key.size=unit(0.5,"in"))
