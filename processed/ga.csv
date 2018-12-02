@@ -11999,7 +11999,7 @@ timestep,generation,bestSize,runtime,profit,distance,structureDistance,plan,init
 39,27,11,1706,7.20857,-1.0,-1.0,repertoire,repertoire,10000,0.9,0.75,0.1,env,15.0,21,1000
 39,28,11,1567,7.20857,-1.0,-1.0,repertoire,repertoire,10000,0.9,0.75,0.1,env,16.0,21,1000
 39,29,11,1135,7.20857,-1.0,-1.0,repertoire,repertoire,10000,0.9,0.75,0.1,env,16.0,21,1000
-0,0,17,2111,0.916667,-1.0,-1.0,short,mutator,10000,0.9,0.75,0.1,requestsfourserv,9.0,seed,popsize
+0,0,17,2111,0.916667,-1.0,-1.0,short,mutator,10000,0.9,0.75,0.1,nodec2,9.0,26,1000
 0,1,17,1806,0.916667,-1.0,-1.0,short,mutator,10000,0.9,0.75,0.1,nodec2,12.0,26,1000
 0,2,19,1830,1.06481,-1.0,-1.0,short,mutator,10000,0.9,0.75,0.1,nodec2,22.0,26,1000
 0,3,19,5248,1.06481,-1.0,-1.0,short,mutator,10000,0.9,0.75,0.1,nodec2,27.0,26,1000
