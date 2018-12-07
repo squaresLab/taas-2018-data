@@ -102,6 +102,20 @@ p <- p + theme(text=element_text(size=20),legend.position=c(.8,.5), title=elemen
 p <- p + geom_point(size=4) + geom_hline(yintercept=4.44, color = "black")
 p + xlab("Time (Minutes)") + ylab("Utility") + scale_color_manual("Planner", values = mycolours)
 
+# a graph to explain the team's transit
+# colorblind color scheme
+cbPalette <- c("#47242B","#5A607C", "#3EAA9A", "#C3E270", "#A18E7B")
+cbPalette <- c("#47242B", "#C3E270")
+
+dart <- read_csv("~/research/taas-2018-data/dart.csv")
+dartenv <- read_csv("~/research/taas-2018-data/dartenv.csv")
+dartenv <- subset(dartenv,dartenv$Environment!="none")
+p <- ggplot(data=dart, aes(x=Timestep,y=Altitude))
+p <- p + theme_bw()
+p <- p + scale_color_manual(values = cbPalette)
+p <- p + theme(text=element_text(size=20),legend.position=c(.8,.62), title=element_text(size=21,face="bold"),legend.title=element_text(size=21,face="bold"),legend.text=element_text(size=20),legend.key.size=unit(0.5,"in"))
+p + geom_point(aes(color=Formation),size=4) + geom_point(data=dartenv,aes(x=Timestep,y=Altitude, shape=Environment),size=4)  + scale_shape_manual(values=c(15, 17, 18))
+
 # start prelim graphs
 dat <- read_csv("/home/ckinneer/research/analysis-code/data.csv")
 dat <- dartsweepnocrossover
