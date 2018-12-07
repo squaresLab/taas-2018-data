@@ -70,20 +70,23 @@ dataagg1 <- aggregate(dataagg,by=list(ga$generation,ga$scenario,ga$timestep),FUN
 # sum up the runtime
 # 10 6
 datasum <- ddply(dataagg1,.(Group.2,Group.3),transform,sumTime = round(cumsum(runtime)/1000))
+#datasum <- subset(datasum,datasum$timestep < 39)
+# downshift the values in the last timestep to make the rest of the graph more readable
+datasum$profit[datasum$timestep==39] = datasum$profit[datasum$timestep==39] - 4.5
 # generation graph
 p <- ggplot(data=datasum, aes(x=Group.1,y=profit,color=Group.2))
 p <- p + theme_bw()
-p <- p + theme(text=element_text(size=10), title=element_text(size=21,face="bold"),legend.title=element_text(size=21,face="bold"),legend.text=element_text(size=20),legend.key.size=unit(0.25,"in"))
-p <- p + scale_color_manual(values=cbPalette, name="Starting\nPlan")
+p <- p + theme(text=element_text(size=10), legend.position=c(.875,.025), title=element_text(size=21,face="bold"),legend.title=element_text(size=21,face="bold"),legend.text=element_text(size=20),legend.key.size=unit(0.25,"in"))
+p <- p + scale_color_manual(values=cbPalette, name="Starting Plan")
 p <- p + ylab("Utility") + xlab("Generation")
-p + geom_line(lwd=1.5) + facet_wrap(~ Group.3,scales="free") + theme(strip.text.x = element_text(size = 8,margin = margin(.1,0,.1,0,"cm")))
+p + geom_line(lwd=1.5) + facet_wrap(~ Group.3) + theme(strip.text.x = element_text(size = 8,margin = margin(.1,0,.1,0,"cm")))
 # runtime graph
 p <- ggplot(data=datasum, aes(x=sumTime/60,y=profit,color=Group.2))
 p <- p + geom_line() + theme_bw() #+ facet_wrap(~ timestep)
-p <- p + theme(text=element_text(size=10), title=element_text(size=21,face="bold"),legend.title=element_text(size=21,face="bold"),legend.text=element_text(size=20),legend.key.size=unit(0.25,"in"))
+p <- p + theme(text=element_text(size=10), legend.position=c(.875,.025), title=element_text(size=21,face="bold"),legend.title=element_text(size=21,face="bold"),legend.text=element_text(size=20),legend.key.size=unit(0.25,"in"))
 p <- p + ylab("Utility") + xlab("Planning Time (Minutes)")
-p <- p + scale_color_manual(values=cbPalette,name="Starting\nPlan")
-p + geom_line(lwd=1.5) + facet_wrap(~ Group.3,scales="free") + theme(strip.text.x = element_text(size = 8,margin = margin(.1,0,.1,0,"cm")))
+p <- p + scale_color_manual(values=cbPalette,name="Starting Plan")
+p + geom_line(lwd=1.5) + facet_wrap(~ Group.3) + theme(strip.text.x = element_text(size = 8,margin = margin(.1,0,.1,0,"cm")))# + ylim(0,5)
 
 #param sweep
 dartsweep <- read_csv("~/research/taas-2018-data/dartsweepnocrossover.csv", col_names=FALSE)
